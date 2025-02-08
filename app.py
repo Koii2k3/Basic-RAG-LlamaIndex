@@ -19,7 +19,6 @@ SIMILARITY_CUTOFF = 0.6
 MAX_SELECTED_NODES = 5
 TEMP_FILES_DIR = "./temp_files"
 
-# Add Favicon
 st.set_page_config(
     page_title="AIVN - RAG with Llama Index",
     page_icon="./static/aivn_favicon.png",
@@ -27,13 +26,11 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Add logo
 st.image("./static/aivn_logo.png", width=300)
 
 if 'run_count' not in st.session_state:
     st.session_state['run_count'] = 0
 
-# Tăng số lần chạy mỗi khi ứng dụng được cập nhật
 st.session_state['run_count'] += 1
 if st.session_state['run_count'] == 1:
     if os.path.exists(TEMP_FILES_DIR):
